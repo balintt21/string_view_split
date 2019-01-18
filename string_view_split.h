@@ -24,6 +24,10 @@ inline std::vector<std::string_view> string_view_split(const std::string_view& s
         strv_cpy = strv_cpy.substr(pos + 1);
         pos = strv_cpy.find(delim);
     }
+    
+    if( !strv_cpy.empty() )
+    { result.emplace_back(strv_cpy); }
+    
     return result;
 }
 

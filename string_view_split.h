@@ -17,6 +17,7 @@ inline std::vector<std::string_view> string_view_split(const std::string_view& s
     std::vector<std::string_view> result;
     std::string_view strv_cpy(strv);
     size_t pos = strv_cpy.find(delim);
+    if(pos == 0) { result.emplace_back(std::string_view()); }
     while( pos != std::string_view::npos )
     {
         if( pos > 0)
